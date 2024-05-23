@@ -37,7 +37,8 @@ service:
       receivers: [otlp]
       processors: [batch]
       # exporters: [debug, otlp]
-      exporters: [debug, zipkin, otlp]
+      exporters: [debug, zipkin]
+      # exporters: [debug, zipkin, otlp]
     metrics:
       receivers: [otlp]
       processors: [batch]
