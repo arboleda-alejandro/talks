@@ -6,10 +6,10 @@
 
 ## Installing Dependencies
 
-1. Enter to `get_attendee` folder
+1. Clone this project and enter to `devops_days_medellin_2024/get_attendee` folder
 
     ```bash
-    cd get_attendee
+    cd devops_days_medellin_2024/get_attendee
     ```
 
 2. Create and activate a virtual environment, or use your local python setup (not recommended)
@@ -29,15 +29,29 @@
 
 1. Enter to `otlp/opentelemetry-collector-contrib`
 
-2. Start the services with Docker Compose:
-
     ```bash
     cd ../otlp/opentelemetry-collector-contrib
     ```
 
+3. Start the services with Docker Compose:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+4. Verify containers are up and running:
+
+    ```bash
+    docker ps
+    ```
+
 ## Running the Scripts
 
-1. To run the automatic instrumented script (`get_attendees_autoinstrumented.py`):
+1. To run the automatic instrumented script (`get_attendees_autoinstrumented.py`) move to `get_attendee` folder an execute like this:
+
+    ```bash
+    cd ../../get_attendee
+    ```
 
     ```bash
     python get_attendees_autoinstrumented.py
@@ -52,5 +66,3 @@
 3. Open `zipkin` on this url: http://0.0.0.0:9411/
 
 4. Open `jaeger` on this url: http://0.0.0.0:16686/
-
-
