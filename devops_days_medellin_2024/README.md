@@ -1,4 +1,4 @@
-# Instructions to Run the "get_attendee" Project
+# Instructions to Run the get_attendee Project
 
 ## Requirements
 1. Tested with python==3.11.5
