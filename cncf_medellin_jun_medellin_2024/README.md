@@ -6,7 +6,7 @@
 
 ## Installing Dependencies
 
-1. Clone this project and enter to `devops_days_medellin_2024/get_attendee` folder
+1. Clone this project and enter to `cncf_medellin_jun_medellin_2024/get_attendee` folder
 
     ```bash
     cd devops_days_medellin_2024/get_attendee
