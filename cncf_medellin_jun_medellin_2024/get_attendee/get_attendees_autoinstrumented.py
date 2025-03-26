@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import requests
 from faker import Faker
 import json
+import socket
 from opentelemetry import trace
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry.sdk.trace import TracerProvider
@@ -36,7 +37,7 @@ FlaskInstrumentor().instrument_app(get_attendees_autoinstrumented)
 fake = Faker('es_ES')
 
 # First API method
-@get_attendees_autoinstrumented.route('/report_cncf_medellin_2024', methods=['GET'])
+@get_attendees_autoinstrumented.route('/', methods=['GET'])
 def report_cncf_medellin():
     event = 'cncfmedellin'
     try:
@@ -66,13 +67,17 @@ def get_attendees():
 def query_main_db():
     entity = request.args.get('entity')
     event = request.args.get('event')
-    
+
     # Generate 10 randon names
+    hostname_ = socket.gethostname()
     attendees = [fake.name() for _ in range(10)]
-    json_data = json.dumps({"CNCF-Medellin2024Attendees": attendees}, ensure_ascii=False)
+    attendes_dictio = {"CNCF-Medellin2024Attendees": attendees}
+    attendes_dictio['Origin'] = hostname_
+    json_data = json.dumps(attendes_dictio, ensure_ascii=False)
+    # json_data = json.dumps({"CNCF-Medellin2024Attendees": attendees}, ensure_ascii=False)
+    #
     return json_data, 200
 
 # Run app
 if __name__ == '__main__':
     get_attendees_autoinstrumented.run(port=8765, debug=True)
-
