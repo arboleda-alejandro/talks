@@ -1,7 +1,7 @@
 initContainers:
   - name: init-check
     image: arboledaalejandro/init-container-buggy:latest
-    command: ["bash", "/entrypoint.sh"] #Add this line to force execution with bash 
+    command: ["bash", "/data/utils/custom/scripts/custom_script.sh"] #Add this line to force execution with bash 
     env:
       - name: FILE_PATH
         value: "/tmp/test.txt"

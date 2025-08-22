@@ -1,7 +1,5 @@
 FROM ubuntu:22.04
-# Copy script
-COPY entrypoint.sh /entrypoint.sh
-# Grant execution permissions
-RUN chmod +x /entrypoint.sh
-# Entry point (we use 'sh', what will cause error)
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+RUN mkdir -p /data/utils/custom/scripts
+COPY custom_script.sh /data/utils/custom/scripts/custom_script.sh
+RUN chmod +x /data/utils/custom/scripts/custom_script.sh
+ENTRYPOINT ["sh", "/data/utils/custom/scripts/custom_script.sh"]
