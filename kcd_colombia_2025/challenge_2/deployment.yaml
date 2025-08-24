@@ -14,10 +14,10 @@ spec:
         app: web-python
     spec:
       securityContext:
-        runAsUser: 1000
+        runAsUser: 0
       containers:
         - name: web
-          image: arboledaalejandro/web-challenge-2:3.2.0
+          image: arboledaalejandro/web-challenge-2:6.0.0
           ports:
             - containerPort: 80
           securityContext:

@@ -1,0 +1,20 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: drop-all-capabilities
+spec:
+  rules:
+    - name: add-drop-all-capabilities
+      match:
+        resources:
+          kinds:
+            - Pod
+          namespaces:
+            - challenge-2  # <- ajusta esto a tu namespace
+      mutate:
+        patchesJson6902: |-
+          - op: add
+            path: /spec/containers/0/securityContext/capabilities/drop
+            value:
+              - "ALL"
+

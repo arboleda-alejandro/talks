@@ -4,7 +4,7 @@
 4) Execute code line by line to see the error
 5) try to edit manifest, change runAsUser: 0 inside container
 6) check replicaset Created, describe it
-7) It's not possible to change it to 0...admissionPolicy
+7) It's not possible to solve it to 0...why? there is a drop-all ?
 8) Solution, add the capability to securityContext
 9)   
 capabilities:
