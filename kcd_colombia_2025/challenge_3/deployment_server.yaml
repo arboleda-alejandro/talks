@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+  namespace: challenge-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      nodeName: ip-172-31-90-115.ec2.internal
+      containers:
+      - name: server
+        image: alpine/socat
+        command: ["/bin/sh", "-c", "apk add --no-cache busybox-extras; while true; do nc -lk -p 12345 -e echo 'hello'; done"]
+

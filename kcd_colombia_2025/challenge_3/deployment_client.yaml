@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+  namespace: challenge-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      nodeName: ip-172-31-74-200.ec2.internal
+      containers:
+      - name: client
+        image: praqma/network-multitool
+        env:
+        - name: TARGET_HOST
+          value: "172.31.90.115"
+        - name: TARGET_PORT
+          value: "31234"
+        command:
+        - /bin/sh
+        - -c
+        - |
+          echo "Starting persistent connection monitor to $TARGET_HOST:$TARGET_PORT..."
+          while true; do
+            if nc -zvw 2 "$TARGET_HOST" "$TARGET_PORT"; then
+              echo "[$(date)] Connection alive."
+            else
+              echo "[$(date)] Connection lost. Exiting and trying to connect to server application in namespace: challenge-3"
+              exit 1
+            fi
+            sleep 5
+          done
+

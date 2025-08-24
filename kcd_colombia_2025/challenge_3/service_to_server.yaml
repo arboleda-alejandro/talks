@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-nodeport
+  namespace: challenge-3
+spec:
+  selector:
+    app: server
+  type: NodePort
+  ports:
+  - port: 12345
+    targetPort: 12345
+    nodePort: 31234
