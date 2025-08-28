@@ -1,0 +1,1 @@
+kubectl get endpoints -n challenge-4 backend-service -w

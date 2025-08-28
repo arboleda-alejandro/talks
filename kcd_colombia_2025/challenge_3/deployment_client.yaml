@@ -13,13 +13,13 @@ spec:
       labels:
         app: client
     spec:
-      nodeName: ip-172-31-74-200.ec2.internal
+      nodeName: ip-172-31-14-28.ec2.internal
       containers:
       - name: client
         image: praqma/network-multitool
         env:
         - name: TARGET_HOST
-          value: "172.31.90.115"
+          value: "172.31.31.120"
         - name: TARGET_PORT
           value: "31234"
         command:

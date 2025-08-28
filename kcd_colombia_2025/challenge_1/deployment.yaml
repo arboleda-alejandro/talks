@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: challenge-1-nginx-init-buggy
+  namespace: challenge-1
+  name: challenge-1-nginx
 spec:
   replicas: 1
   selector:

@@ -1,0 +1,3 @@
+k exec -it server-545b4cffc7-6gkcp -n challenge-3 -- ps -fea
+k exec -it server-545b4cffc7-6gkcp -n challenge-3 -- nc -vz -w 3 localhost:12345
+k describe svc -n challenge-3

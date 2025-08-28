@@ -10,7 +10,7 @@ spec:
           kinds:
             - Pod
           namespaces:
-            - challenge-2  # <- ajusta esto a tu namespace
+            - challenge-2
       mutate:
         patchesJson6902: |-
           - op: add

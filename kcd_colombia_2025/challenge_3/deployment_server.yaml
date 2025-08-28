@@ -13,7 +13,7 @@ spec:
       labels:
         app: server
     spec:
-      nodeName: ip-172-31-90-115.ec2.internal
+      nodeName: ip-172-31-31-120.ec2.internal
       containers:
       - name: server
         image: alpine/socat

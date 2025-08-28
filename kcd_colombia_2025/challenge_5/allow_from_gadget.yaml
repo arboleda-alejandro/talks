@@ -1,0 +1,13 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-all-test
+  namespace: gadget
+spec:
+  description: "Política temporal para permitir todo el tráfico"
+  endpointSelector:
+    matchLabels: {}
+  ingress:
+  - {}
+  egress:
+  - {}

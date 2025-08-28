@@ -1,0 +1,1 @@
+k logs kyverno-admission-controller-5bcbdff469-wl8sz -n kyverno | grep -i drop | grep -i all

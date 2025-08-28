@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: challenge-5
+  name: challenge-5-web-service-python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-python
+  template:
+    metadata:
+      labels:
+        app: web-python
+    spec:
+      nodeName: ip-172-31-31-120.ec2.internal
+      containers:
+        - name: web
+          image: arboledaalejandro/web-challenge-2:6.0.0
+          ports:
+            - containerPort: 80
+          securityContext:
+            seccompProfile:
+              type: Localhost
+              localhostProfile: myseccompprofile.json
+            runAsUser: 0
