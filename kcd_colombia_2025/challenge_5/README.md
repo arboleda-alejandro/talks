@@ -8,11 +8,11 @@
 7) syscalls? let's check
 8) in one terminal, scan with Gadget. Delete the pod First.
 9) k gadget run audit_seccomp -n challenge-5 
-9) syscall missing! let's connect to the node!
-9.1) access to the node: https://us-east-1.console.aws.amazon.com/systems-manager/session-manager/i-0f9620c47d654a6e5?region=us-east-1#:
-10) Add BIND to the list
-11) Check Deployment
-12) once fixed, run kubectl gadget run advise_seccomp -n challenge-5
-13) Recreate pod
-13) Control + C
-14) We have the seccompProfile
+10) syscall missing! let's connect to the node!
+11) access to the node
+12) Add BIND to the list of syscalls
+13) Check Deployment
+14) once fixed, run kubectl gadget run advise_seccomp -n challenge-5
+15) Recreate pod
+16) Control + C
+17) We have the seccompProfile
