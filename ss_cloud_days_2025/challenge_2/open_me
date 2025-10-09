@@ -1,0 +1,1 @@
+kubectl run init-debug --image=arboledaalejandro/init-container-buggy:3.3.0 --restart=Never --rm -it --command -- bash

@@ -1,0 +1,15 @@
+apiVersion: core.k8sgpt.ai/v1alpha1
+kind: K8sGPT
+metadata:
+  name: bedrock
+  namespace: k8sgpt-operator-system
+spec:
+  ai:
+    enabled: true
+    model: arn:aws:bedrock:us-east-1:411080312941:application-inference-profile/alw7ll3csv98
+    region: us-east-1
+    backend: amazonbedrock
+    language: english
+  noCache: false
+  repository: ghcr.io/k8sgpt-ai/k8sgpt
+  version: v0.4.25

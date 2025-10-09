@@ -1,0 +1,13 @@
+apiVersion: k8sgpt.ai/v1alpha1
+kind: Result
+metadata:
+  name: test-scan
+  namespace: k8sgpt-operator-system
+spec:
+  # Scan all namespaces
+  namespace: "challenge-1"
+  ai:
+    enabled: true
+    provider: bedrock
+  filters:
+    - all
