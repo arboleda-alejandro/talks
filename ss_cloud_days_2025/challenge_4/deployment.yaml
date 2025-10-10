@@ -19,7 +19,7 @@ spec:
       labels:
         app: web-python
     spec:
-      nodeName: ip-10-0-17-48.ec2.internal
+      nodeName: ip-10-0-15-80.ec2.internal
       containers:
         - name: web
           image: arboledaalejandro/web-challenge-2:6.0.0

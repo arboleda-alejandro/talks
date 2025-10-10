@@ -1,1 +1,1 @@
-kubectl gadget run advise_seccomp -n challenge-5
+kubectl gadget run advise_seccomp -n challenge-4
