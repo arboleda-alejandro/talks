@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: talks
+  annotations:
+    github.com/project-slug: arboleda-alejandro/talks
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: other
+  lifecycle: experimental
+  owner: user:default/arboleda-alejandro
+
