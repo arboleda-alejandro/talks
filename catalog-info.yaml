@@ -5,8 +5,10 @@ metadata:
   annotations:
     github.com/project-slug: arboleda-alejandro/talks
     backstage.io/techdocs-ref: dir:.
+  description: Demo codes and slides from technology talks and presentations
 spec:
-  type: other
+  type: documentation
   lifecycle: experimental
   owner: user:default/arboleda-alejandro
+  system: developer-hub
 
