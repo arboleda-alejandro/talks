@@ -1,0 +1,6 @@
+site_name: talks
+docs_dir: docs
+repo_url: https://github.com/arboleda-alejandro/talks
+edit_uri: blob/main/docs
+plugins:
+  - techdocs-core
